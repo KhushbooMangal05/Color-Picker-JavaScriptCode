@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGB Color picker</title>
+  <style>
+    #colorDisplay{
+      border:5px solid black;
+      margin: 0 auto;
+      width:300px;
+      height:300px;
+    }
+    label{
+      font-size: 30px;
+    }
+    input[type="range"]{
+      width:200px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="red">Red:</label>
+ <input type="range" id="red" min="0" max="255" value="0" ><br>
+ <label for="green">Green:</label>
+ <input type="range" id="green" min="0" max="255" value="0"><br>
+ <label for="blue">Blue:</label>
+ <input type="range" id="blue" min="0" max="255" value="0"><br>
+ <div id="colorDisplay">
+ </div>
+ <script>
+document.addEventListener('input',()=>{
+  const redValue = document.querySelector('#red').value;
+  const greenValue = document.querySelector('#green').value;
+  const blueValue = document.querySelector('#blue').value;
+  const colorr = document.querySelector('#colorDisplay');
+colorr.style.backgroundColor=`rgb(${redValue}, ${greenValue}, ${blueValue})`;
+  
+});
+ </script>
+</body>
+</html>
